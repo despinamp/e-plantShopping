@@ -273,6 +273,7 @@ const handlePlantsClick = (e) => {
     setShowCart(false); // Hide the cart when navigating to About Us
 };
 const handleParadiseNurseyClick = (e) => {
+    
     e.preventDefault();
     setShowPlants(false);
     setShowCart(false);
@@ -324,7 +325,7 @@ const handleParadiseNurseyClick = (e) => {
                 <div className="product-description">{plant.description}</div>
                 <div className="product-cost">{plant.cost}</div>
                 {/*Similarly like the above plant.name show other details like description and cost*/}
-                <button  className="product-button"  onClick={() => handleAddToCart(plant)} disabled={checkDisabled(plant.name)}>Add to Cart</button>
+                <button  className="product-button"  onClick={() => handleAddToCart(plant)} disabled={checkDisabled(plant.name)}><div>{!checkDisabled(plant.name)?<div>Add To Cart</div>:<div>Added To Cart</div>}</div></button>
             </div>
             ))}
         </div>
