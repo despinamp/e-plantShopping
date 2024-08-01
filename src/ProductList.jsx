@@ -4,7 +4,7 @@ import './ProductList.css'
 import {addItem} from './CartSlice'
 import CartItem from './CartItem'
 
-function ProductList() {
+function ProductList({showProductList,returntoHomePage}) {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
@@ -277,8 +277,7 @@ const handleParadiseNurseyClick = (e) => {
     e.preventDefault();
     setShowPlants(false);
     setShowCart(false);
-    console.log(showCart);
-    console.log(showPlants);
+    returntoHomePage();
   };
 
    const handleContinueShopping = (e) => {
