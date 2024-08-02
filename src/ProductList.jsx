@@ -262,7 +262,13 @@ function ProductList({showProductList,returntoHomePage}) {
     color: 'white',
     fontSize: '30px',
     textDecoration: 'none',
+    textAlign:'center',
    }
+   const categorytitle={
+    textDecoration: 'underline overline',
+    textAlign: 'center',
+   }
+  
    const handleCartClick = (e) => {
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
@@ -315,7 +321,7 @@ const handleParadiseNurseyClick = (e) => {
         <div className="product-grid">
                 {plantsArray.map((category, index) => (
     <div key={index}>
-        <h1><div>{category.category}</div></h1>
+        <h1><div style={categorytitle}>{category.category}</div></h1>
         <div className="product-list">
             {category.plants.map((plant, plantIndex) => (
             <div className="product-card" key={plantIndex}>
